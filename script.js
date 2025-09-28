@@ -17,7 +17,8 @@
 // let ItemMinus1 = document.getElementsByClassName("ItemMinus");
 
 // let count = document.getElementsByClassName("count")
-
+const modalWrapper = document.querySelector('.modalboss');
+const bodymodal = document.querySelector('body');
 
 
 let items = [
@@ -73,7 +74,25 @@ let count1 = document.getElementsByClassName('count');
 
 
 
+function toggleHidden() {
 
+  modalWrapper.classList.add('showElement');
+  bodymodal.classList.add('modalbody');
+}
+
+setTimeout(function () {
+  toggleHidden()
+}, 5000)
+
+
+function notoggleHidden() {
+  bodymodal.classList.remove('modalbody');
+  modalWrapper.classList.add('hideElement');
+}
+const closebutton = document.getElementById("modaltext2");
+closebutton.addEventListener('click', function () {
+  notoggleHidden();
+})
 
 for (let i = 0; i < items.length; i++) {
   console.log(items[i].price)
@@ -146,5 +165,4 @@ back.addEventListener('click', function () {
   window.location.href = "./index.html";
 })
 // basket test
-
 
