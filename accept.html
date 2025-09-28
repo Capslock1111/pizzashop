@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="zakaz.css">
+</head>
+
+<body>
+    <div id="orderConfirmation">
+        <h1>Подтверждение заказа</h1>
+        <div class="orderConfirmationForm">
+            <div class="group">
+                <p class="inputTitle">Способ получения</p>
+                <div class="deliveryOptions">
+                    <div class="inputGroup">
+                        <input type="radio" name="delivery" id="shippingInput"><label
+                            for="shippingInput">Доставка</label>
+                    </div>
+                    <div class="inputGroup">
+                        <input type="radio" name="delivery" id="pickupInput"><label for="pickupInput">Самовывоз</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group">
+                <p class="inputTitle">Данные получателя</p>
+                <table id="userInfoTable">
+                    <tr class="userInfo">
+                        <td id="userName">ФИО:</td>
+                        <td id="userName1"></td>
+                    </tr>
+                    <tr class="userInfo">
+                        <td>Email:</td>
+                        <td id="userMail"></td>
+                    </tr>
+                    <tr class="userInfo">
+                        <td>Номер телефона:</td>
+                        <td id="userNumber"></td>
+                    </tr>
+                    <tr class="userInfo">
+                        <td>Адрес доставки:</td>
+                        <td id="userAdress"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="group">
+                <p class="inputTitle">Способ оплаты</p>
+                <div class="paymentOptions">
+                    <div class="inputGroup">
+                        <input type="radio" name="pay" id="cashPayment"><label for="pay_1">Наличными
+                            курьеру</label>
+                    </div>
+                    <div class="inputGroup">
+                        <input type="radio" name="pay" id="cardPayment"><label for="pay_2">Банковской
+                            картой</label>
+                    </div>
+                </div>
+            </div>
+
+            <table id="orderListTable">
+                <tr>
+                    <th></th>
+
+                    <th>Кол-во:</th>
+                    <th>Стоимость:</th>
+                    <td id="price2"></td>
+                </tr>
+            </table>
+
+            <div class="group">
+                <p class="inputTitle">У вас есть промокод?</p>
+                <input type="text" class="formInput" id="promoCodeInput">
+                <p class="inputHintSuccess">*Промокод успешно
+                    активирован</p>
+                <p class="inputHintError">*Вы ввели неверный /
+                    недействительный промокод</p>
+                <button class="btn primary" id="activatePromoBtn">Активировать</button>
+            </div>
+
+            <div class="group">
+                <p class="sectionTitle">Ваш заказ</p>
+
+                <table id="finalOrderCheckTable">
+                    <tr class="order">
+                        <th>Товары:</th>
+                        <td id="basePrice"></td>
+                    </tr>
+                    <tr class="order">
+                        <th>Скидка:</th>
+                        <td id="discount"> 0 %</td>
+                    </tr>
+                    <tr class="order">
+                        <th>Стоимость доставки:</th>
+                        <td id="deliveryPrice">500</td>
+                    </tr>
+                    <tr class="orderInfo">
+                        <th id="finalInfo">Итого:</th>
+                        <td id="finalPrice"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="actionsBtns">
+                <button class="btn primary" id="backToUserFormBtn">Назад</button>
+                <button class="btn secondary" id="confirmOrderBtn">Оформить
+                    заказ</button>
+            </div>
+        </div>
+    </div>
+    <script src="accept.js"></script>
+</body>
+
+</html>

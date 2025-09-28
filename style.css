@@ -1,0 +1,184 @@
+.header li {
+    font-size: 16px;
+    color: #4e4e4e;
+    cursor: pointer;
+    list-style: none;
+    margin: 20px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-bottom: 1px solid black;
+    margin-bottom: 30px;
+
+}
+
+input {
+    width: 1000px;
+    margin-left: 500px;
+    height: 40px;
+    border-radius: 1px;
+
+}
+
+button {
+    height: 40px;
+    width: 100px;
+    cursor: pointer;
+}
+
+.sale {
+    display: flex;
+    margin-left: 400px;
+    margin-bottom: 100px;
+    justify-content: left;
+
+}
+
+.sale img {
+    width: 250px;
+    height: 200px;
+    cursor: pointer;
+}
+
+.main {
+    font-size: 50px;
+    margin-left: 750px;
+    margin-bottom: 50px;
+}
+
+body {
+    background-image: url();
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(233, 230, 230);
+}
+
+img {
+    width: 300px;
+    margin: 5px;
+    border-radius: 12px;
+    box-shadow: 2px 2px 1px 1px #b2b2b2;
+}
+
+#shop {
+    display: flex;
+    flex-direction: column;
+}
+
+a:active,
+/* активная/посещенная ссылка */
+a:hover,
+/* при наведении */
+a {
+    text-decoration: none;
+    color: #4e4e4e;
+}
+
+.ckyka {
+    font-size: 35px;
+}
+
+.vakancii li {
+    font-size: 50px;
+    padding-top: 20px;
+}
+
+.item {
+    font-size: 20px;
+    margin: 0;
+}
+
+.basket {
+    transform: translate(20px, 29px);
+}
+
+.price {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.shop_2 {
+    display: flex;
+    flex-direction: row;
+}
+
+p {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.addedItem {
+    background-color: aqua;
+}
+
+.ItemsCounter {
+    display: none;
+    align-items: center;
+}
+
+.ItemPlus {
+
+    margin-left: 40px;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    color: aqua;
+}
+
+.ItemMinus {
+    margin-right: 40px;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    color: aqua;
+}
+
+.showItemsCounter {
+    display: flex;
+}
+
+.shop_3 {
+    display: flex;
+
+}
+
+.basket1 {
+    display: flex;
+    align-items: center;
+    margin-left: 200px;
+}
+
+.basket1 p {
+    margin: 0 5px;
+    font-size: 25px;
+}
+
+#cart {
+    width: 180px;
+    background-color: rgb(255, 151, 15);
+    padding: 5px;
+    font-size: large;
+    font-weight: 600;
+    border-radius: 15px;
+}
+
+#cart {
+    display: flex;
+    align-items: center;
+}
+
+#cart:hover {
+    background-color: rgb(9, 97, 16);
+    color: white;
+    cursor: pointer;
+}
+
+.show-element {
+    display: flex;
+}

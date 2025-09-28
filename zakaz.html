@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="zakaz.css">
+    </head>
+
+    <body>
+
+        <div id="userDetails">
+            <h1 class="h1">Оформление заказа</h1>
+            <div id="userDataForm">
+                <div class="inputGroup">
+                    <p class="inputTitle">ФИО</p>
+                    <input type="text" class="formInput" id="nameInput"
+                        placeholder="Иванов Иван Иванович" required>
+                    <p class="requiredHint" id="requiredHint1">*Обязательное
+                        поле для
+                        заполнения</p>
+                </div>
+
+                <div class="inputGroup">
+                    <p class="inputTitle">Email</p>
+                    <input type="text" class="formInput" id="mailInput"
+                        placeholder="Электронная почта" required>
+                    <p class="requiredHint" id="requiredHint2">*Обязательное
+                        поле для
+                        заполнения</p>
+                </div>
+
+                <div class="inputGroup">
+                    <p class="inputTitle">Номер телефона</p>
+                    <input type="text" class="formInput" id="numberInput"
+                        placeholder="В формате +7xxxxxxxxxx" required>
+                    <p class="requiredHint" id="requiredHint3">*Обязательное
+                        поле для
+                        заполнения</p>
+                </div>
+
+                <div class="inputGroup">
+                    <p class="inputTitle">Адрес доставки</p>
+                    <input type="text" class="formInput" id="adressInput"
+                        placeholder="Куда отправить заказ?" required>
+                    <p class="requiredHint" id="requiredHint4">*Обязательное
+                        поле для
+                        заполнения</p>
+                </div>
+
+                <div class="actionsBtns">
+                    <button class="btn secondary"
+                        id="backToListBtn">Назад</button>
+                    <button class="btn primary" id="confirmUserDataBtn"
+                        disabled>Далее</button>
+                </div>
+            </div>
+        </div>
+        <script src="zakaz.js"></script>
+    </body>
+
+</html>
