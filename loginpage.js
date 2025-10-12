@@ -1,46 +1,60 @@
 "use strict";
-let userData = [
-    // {
-    //     name: "",
-    //     surname: "",
-    //     age: "",
-    //     gender: "",
-    //     password: "",
-    //     country: "",
-    //     login: "",
-    // },
-];
+
+
+
 let registerButton = document.querySelector('#registerButton');
 let loginButton = document.querySelector('#loginButton');
+let clearButton = document.querySelector('#clearButton');
 let username = document.querySelector('#username');
 let password = document.querySelector('#password');
+let massage1 = document.querySelector("h1");
+let massage2 = document.querySelector("h2");
+
 registerButton.addEventListener('click', function () {
-    let user = {
-
-    };
-    user.login = username.value;
-    user.password = password.value;
-    console.log(user);
-
-    userData.push(user);
-    console.log(userData);
-    username.value = '';
-    password.value = "";
-
+    window.location.href = "regPage.html";
 });
+
 loginButton.addEventListener('click', function () {
+    // Создаем пустой массив, куда положим данные пользователей из localStorage
+    let userData = [];
+
+    const localStorageSize = localStorage.length;
+
+    for (let i = 0; i < localStorageSize; i++) {
+        // JSON.parse метод дешифрует данные объекта из localStorage, чтобы корректно их отобразить нам
+        // Метод push массивов добавляет данные из localStorage в userData массив
+        userData.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
+    }
     console.log(userData);
-    if (!!userData[0].login || !!userData[0].password) {
-        if (userData[0].login === username.value && userData[0].password === password.value) {
-            console.log("Готово");
-        }
-        else {
-            console.log("Не готово");
-        }
-    }
-    else if (userData.length === 0) {
-        console.log("Ошибка");
-    }
 
+    // Метод find возвращает undefined (т.е. false = ложь), если логин, введенный в поле не совпадает с 
+    // логинами в БД (базе данных) userData.
+    // Если же пользователь с таким логином существует, то этот метод возвращает нашего найденного пользователя
+    // (объект)
+    const foundData = userData.find(data => username.value === data.login);
 
+    // Если пользователь с таким логином есть (foundData == true - это то же самое, что foundData), то
+    // срабатывает следующая проверка уже пароля на верность/корректность
+    if (foundData) {
+        console.log(foundData);
+        massage1.classList = "messagenone";
+        if (password.value === foundData.password) {
+            console.log("Добро пожаловать!");
+            window.location.href = "index.html";
+            massage2.classList = "messagenone";
+            massage2.classList = "messagenone";
+        } else {
+            console.log("Неправильный пароль");
+            massage2.classList = "messageshow";
+        }
+    } else {
+        console.log("Неправильный логин");
+        massage1.classList = "messageshow";
+    }
 });
+
+// Удобная кнопка для очистки БД (локального хранилища)
+clearButton.addEventListener('click', function () {
+    localStorage.clear();
+});
+

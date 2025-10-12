@@ -1,22 +1,5 @@
 "use strict"
 
-// let ItemBasket = [];
-
-// let addItem = document.getElementsByClassName("basket");
-
-// let FinalPrice = 0;
-
-// let itemsPrises = document.getElementsByClassName("price");
-
-// let additeminbasket = document.getElementsByClassName("test");
-
-// let ItemsCounter = document.getElementsByClassName("item");
-
-// let ItemPlus1 = document.getElementsByClassName("ItemPlus");
-
-// let ItemMinus1 = document.getElementsByClassName("ItemMinus");
-
-// let count = document.getElementsByClassName("count")
 const modalWrapper = document.querySelector('.modalboss');
 const bodymodal = document.querySelector('body');
 
@@ -161,8 +144,7 @@ cart.addEventListener('click', function () {
   window.location.href = "./zakaz.html";
   localStorage.setItem('someName3', JSON.stringify(cartCount.innerText));
 })
-back.addEventListener('click', function () {
-  window.location.href = "./index.html";
-})
-// basket test
+
+
+
 

@@ -1,0 +1,44 @@
+#loginPage {
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+#loginText2 {
+    text-align: center;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+
+    top: 0;
+    left: 0;
+}
+
+#loginText {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+input {
+    border-radius: 10px;
+    height: 30px;
+    font-size: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+
+button {
+    margin-top: 10px;
+    border-radius: 10px;
+    height: 30px;
+    font-size: 18px;
+    margin-bottom: 40px;
+    margin-left: 10px;
+}
