@@ -3,7 +3,6 @@
 const modalWrapper = document.querySelector('.modalboss');
 const bodymodal = document.querySelector('body');
 
-
 let items = [
   {
     id: 1,
@@ -54,6 +53,8 @@ itemsList.innerHTML = "";
 let back = document.getElementById('backToListBtn');
 
 let count1 = document.getElementsByClassName('count');
+
+let timerDisplay = document.querySelector('#timerDisplay');
 
 
 
@@ -145,6 +146,27 @@ cart.addEventListener('click', function () {
   localStorage.setItem('someName3', JSON.stringify(cartCount.innerText));
 })
 
+const end = new Date("2025-10-19T23:59:59").getTime();
 
+const now = Date.now();
+let diff = end - now;
+let timer = null;
 
+function updateTimerDisplay() {
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+  const hrs = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+  const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+  const secs = Math.floor((diff % (1000 * 60)) / 1000).toString().padStart(2, '0');
+  timerDisplay.textContent = `${days}:${hrs}:${mins}:${secs}`
+}
 
+timer = setInterval(() => {
+  diff = diff - 1000;
+  if (diff <= 0) {
+    clearInterval(timer);
+    timerDisplay.textContent = "00:00:00:00";
+    saleText.textContent = "Распродажа началась!";
+  } else {
+    updateTimerDisplay()
+  }
+}, 1000);
