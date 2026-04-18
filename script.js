@@ -1,7 +1,24 @@
 "use strict"
 
-const modalWrapper = document.querySelector('.modalboss');
-const bodymodal = document.querySelector('body');
+let ItemBasket = [];
+
+let addItem = document.getElementsByClassName("basket");
+
+let FinalPrice = 0;
+
+let itemsPrises = document.getElementsByClassName("price");
+
+let additeminbasket = document.getElementsByClassName("test");
+
+let ItemsCounter = document.getElementsByClassName("item");
+
+let ItemPlus1 = document.getElementsByClassName("ItemPlus");
+
+let ItemMinus1 = document.getElementsByClassName("ItemMinus");
+
+let count = document.getElementsByClassName("count")
+
+let itemsList = document.getElementById("shop");
 
 let items = [
   {
@@ -42,46 +59,12 @@ let items = [
   }
 ];
 
-let itemsList = document.getElementById("shop");
-
-let cartCount = document.getElementById('cart-count');
-
-let cart = document.getElementById('cart');
-
 itemsList.innerHTML = "";
-
-let back = document.getElementById('backToListBtn');
-
-let count1 = document.getElementsByClassName('count');
-
-let timerDisplay = document.querySelector('#timerDisplay');
-
-
-
-function toggleHidden() {
-
-  modalWrapper.classList.add('showElement');
-  bodymodal.classList.add('modalbody');
-}
-
-setTimeout(function () {
-  toggleHidden()
-}, 5000)
-
-
-function notoggleHidden() {
-  bodymodal.classList.remove('modalbody');
-  modalWrapper.classList.add('hideElement');
-}
-const closebutton = document.getElementById("modaltext2");
-closebutton.addEventListener('click', function () {
-  notoggleHidden();
-})
 
 for (let i = 0; i < items.length; i++) {
   console.log(items[i].price)
   let item =
-    `<div class="sale" id="${items[i].id}">
+    `<div class="sale animate__animated animate__zoomIn" id="${items[i].id}">
   <img src=${items[i].img} alt>
     <div class="shop_1">
       <h3>${items[i].name}</h3>
@@ -94,79 +77,30 @@ for (let i = 0; i < items.length; i++) {
       <div class="shop_2">
         <p class="price">${items[i].price}</p>
         <p>руб.</p>
-        <button class="action-btn" id = "btn${items[i].id}" >В корзину</button>
-        <div class="ItemsCounter item">
-        <button class="action-btn-small minus">-</button>
-        <p class="count">0</p>
-        <button class="action-btn-small plus">+</button>
+        <button class="basket test" id = "btn${items[i].id}" >В корзину</button>
       </div>
+      <div class="ItemsCounter item">
+        <button class="ItemMinus">-</button>
+        <p class="count">1</p>
+        <button class="ItemPlus">+</button>
       </div>
-      
     </div>
 </div>`;
 
-  console.log(count1);
-
   itemsList.innerHTML += item;
-}
 
-
-let addItemBtns = document.getElementsByClassName('action-btn');
-
-for (let button of addItemBtns) {
-  button.addEventListener('click', function () {
-    console.log(this.parentElement);
-    cartCount.innerText = +cartCount.innerText + +this.parentElement.children[0].innerText;
-    this.parentElement.children[3].classList.add("show-element");
-    this.parentElement.children[3].children[1].innerText = +this.parentElement.children[3].children[1].innerText + 1;
+  document.getElementById(`btn${items[i].id}`).addEventListener('click', function () {
+    console.log(document.getElementById(`btn${items[i].id}`));
   })
 }
 
-let plusBtns = document.getElementsByClassName('plus');
-let minusBtns = document.getElementsByClassName('minus');
+// Создаем функцию, которая переключает видимость элемента.
+// Почему функция? Потому что ее потребуется использовать много раз (вызывать много раз для переключения видимости)
+// function toggleHidden() {
+//   const modalWrapper = document.querySelector('.modal-wrapper');
+//   modalWrapper.classList.add('showElement');
+// }
 
-for (let button of plusBtns) {
-  button.addEventListener('click', function () {
-    console.log(this.parentElement);
-    this.parentElement.children[1].innerText = +this.parentElement.children[1].innerText + 1;
-    cartCount.innerText = +cartCount.innerText + +this.parentElement.parentElement.children[0].innerText;
-  })
-}
+// // Вызываем функцию для отображения модального окна после загрузки страницы
+// toggleHidden();
 
-for (let button of minusBtns) {
-  button.addEventListener('click', function () {
-    if (+this.parentElement.children[1].innerText >= 1) {
-      this.parentElement.children[1].innerText = +this.parentElement.children[1].innerText - 1;
-      cartCount.innerText = +cartCount.innerText - +this.parentElement.parentElement.children[0].innerText;
-    }
-  })
-}
-cart.addEventListener('click', function () {
-  window.location.href = "./zakaz.html";
-  localStorage.setItem('someName3', JSON.stringify(cartCount.innerText));
-})
-
-const end = new Date("2025-10-19T23:59:59").getTime();
-
-const now = Date.now();
-let diff = end - now;
-let timer = null;
-
-function updateTimerDisplay() {
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
-  const hrs = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
-  const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
-  const secs = Math.floor((diff % (1000 * 60)) / 1000).toString().padStart(2, '0');
-  timerDisplay.textContent = `${days}:${hrs}:${mins}:${secs}`
-}
-
-timer = setInterval(() => {
-  diff = diff - 1000;
-  if (diff <= 0) {
-    clearInterval(timer);
-    timerDisplay.textContent = "00:00:00:00";
-    saleText.textContent = "Распродажа началась!";
-  } else {
-    updateTimerDisplay()
-  }
-}, 1000);

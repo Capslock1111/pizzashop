@@ -2,58 +2,58 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <!-- <meta name="viewport" content="width=device-width>, initial-scale=1.0"> -->
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
+
 <body>
-  <div class="modalboss">
-    <div id="modal">
-      <div class="modal1">
-        <p id="modaltext1">Подписка на рассылку</p>
-        <button id="modaltext2">x</button>
-      </div>
+    <!-- Наше Модальное окно -->
+    <!-- <div class="modal-wrapper">
+      <div id="subscribe-modal">
+        <div class="upper-block">
+          <p>Подписка на рассылку</p>
+          <button class="modal-close-btn">X</button>
+        </div>
 
-      <div class="modal2">
-        <p id="modaltext3">Электронная почта</p>
-        <input id="modalinput" type="text" />
-      </div>
+        <div class="middle-block">
+          <p>Электронная почта</p>
+          <input type="text" name="" id="modal-input" />
+        </div>
 
-      <div class="modal3">
-        <button id="modalbut1">Подписаться</button>
-        <button id="modalbut2">Отменить</button>
+        <div class="lower-block">
+          <button class="modal-action-btn">Подписаться</button>
+          <button class="modal-action-btn">Отменить</button>
+        </div>
       </div>
-    </div>
-  </div>
-  <div>
-    <div class="header">
-      <li><a href="index.html">Главная</a></li>
-      <li><a href="actii.html">Акции</a></li>
-      <li><a href="shops.html">Магазины</a></li>
-      <li><a href="dostavka.html">Доставка</a></li>
-      <li><a href="buyers.html">Покупателям</a></li>
-      <li><a href="rob.html">Вакансии</a></li>
-      <div id="cart">
-        <p class="basket2" id="basket_1">Корзина:</p>
-        <span id="cart-count">0</span>
-        <p class="basket_2">руб.</p>
-      </div>
-    </div>
-    <div id="bigSale">
-      <p id="saleText">ДО НАЧАЛА РАСПРОДАЖИ ОСТАЛОСЬ:</p>
-      <div id="timerDisplay">01:00:00:00</div>
-    </div>
-    <div class="search">
-      <input type="search" placeholder="Поиск по сайту" />
-      <button>Искать</button>
-    </div>
-  </div>
-  <p class="main">Все товары</p>
+    </div> -->
 
-  <div id="shop">
-    <!-- <div class="sale" id="1">
+    <div class="animate__animated animate__fadeInDown">
+        <div class="header">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="actii.html">Акции</a></li>
+            <li><a href="shops.html">Магазины</a></li>
+            <li><a href="dostavka.html">Доставка</a></li>
+            <li><a href="buyers.html">Покупателям</a></li>
+            <li><a href="rob.html">Вакансии</a></li>
+            <div class="basket1">
+                <p class="basket2" id="basket_1">Корзина:</p>
+                <p class="basket_2">0</p>
+                <p class="basket_2">руб.</p>
+            </div>
+        </div>
+        <div class="search">
+            <input type="search" placeholder="Поиск по сайту" />
+            <button>Искать</button>
+        </div>
+    </div>
+    <p class="main animate__animated animate__zoomIn">Все товары</p>
+
+    <div id="shop">
+        <!-- <div class="sale" id="1">
                 <img src="img/1.webp" alt>
                 <div class="shop_1">
                     <h3>Пицца Маргарита</h3>
@@ -172,9 +172,9 @@
                     </div>
             </div>
             </div> -->
-  </div>
-  <div class="footer"></div>
-  <script src="script.js"></script>
+    </div>
+    <div class="footer"></div>
+    <script src="script.js"></script>
 </body>
 
 </html>

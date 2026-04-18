@@ -110,9 +110,9 @@
     color: rgb(0, 129, 9);
 }
 
-/* .inputHintError {
+.inputHintError {
     color: red;
-} */
+}
 
 .inputTitle {
     font-weight: 500;
@@ -167,11 +167,3 @@
     width: 400px;
     border-radius: 10px;
 }
-
-#requiredHint4, #requiredHint3, #requiredHint2, #requiredHint1 {
-    display: none;
-}
-#confirmUserDataBtn {
-    opacity: 0.5;
-}
-
