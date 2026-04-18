@@ -227,3 +227,58 @@ p {
 .animate__zoomIn {
   --animate-duration: 2s;
 }
+
+@media (max-width: 480px) {
+  body {
+    width: 360px;
+  }
+
+  .header {
+    width: 360px;
+  }
+
+  .header li {
+    display: flex;
+    font-size: 13px;
+    margin-right: 10px;
+  }
+
+  .basket1 {
+    margin-left: 10px;
+    font-size: 20px;
+  }
+
+  .search {
+    display: flex;
+    flex-direction: column;
+
+
+  }
+
+  .search input {
+    width: 350px;
+    margin-left: 0;
+  }
+
+  .sale {
+    width: 360px;
+    font-size: 10px;
+    margin-left: 0;
+  }
+
+  .sale img {
+    width: 150px;
+    height: 150px;
+
+  }
+
+  .item {
+    font-size: 10px;
+    margin-left: 0;
+  }
+
+  .main {
+    margin-left: 200px;
+    font-size: 20px;
+  }
+}
